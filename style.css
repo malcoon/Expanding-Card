@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Koulen&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Koulen', cursive;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #0e0e0e;
+}
+
+.container {
+    width: 90vw;
+    display: inline-flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.panel {
+    opacity: .2;
+    flex: 0.5px;
+    height: 45vw;
+    margin: 10px;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+    letter-spacing: 1px;
+    border-radius: .6rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: flex 0.7s ease-in;
+    background-position: 25% 100%;
+    -webkit-transition: all 700ms ease-in;
+}
+
+    .panel h3 {
+        opacity: 0;
+        left: -100%;
+        bottom: 1rem;
+        font-size: 30px;
+        padding: 0 2rem;
+        color: #080808;
+        position: absolute;
+        background-color: #79cf24;
+    }
+
+.panel.active {
+    flex: 5;
+    opacity: 1;
+    background-position: left;
+    background-size: 100% cover;
+    background-repeat: no-repeat;
+}
+
+    .panel.active h3 {
+        left: 0;
+        opacity: 1;
+        transition: all 0.4s ease-in 0.4s;
+    }
+
+@media (max-width: 480px) {
+    .container {
+        width: 100vw;
+    }
+
+    .panel h3 {
+        left: 2rem;
+        bottom: 1rem;
+        font-size: 14px;
+        padding: 0 1rem;
+    }
+
+    .panel:nth-of-type(4),
+    .panel:nth-of-type(5) {
+        display: none;
+    }
+}
